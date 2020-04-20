@@ -1,0 +1,39 @@
+<launch>
+
+    <!--这里尽量不要出现中文路径-->
+
+    <arg name="bin_dir" default="/media/cyber-z/E/test/output" /> 
+    <arg name="pcd_dir" default="/media/cyber-z/E/Pedestrian detection/DL/KITTI/kitti_object_vis-master/data/object/training/velodyne" /> 
+    <arg name="calib_dir" default="/media/cyber-z/E/test/calib" /> 
+    <arg name="label_dir" default="/media/cyber-z/E/test/label" /> 
+    <arg name="input_type_option" default="bin" />       <!--  bin/pcd  -->
+    <arg name="show_type_option" default="single" />     <!--  single/step/series  -->
+    <arg name="show_count" default="1" />                <!--  single=1=default,start form show_num    -->
+    
+    <arg name="show_num" default="1" />
+    <arg name="cloud_type" default="XYZI" />              <!--  XYZ/XYZI  不准备使用,预留接口-->
+
+
+    <node pkg="bag" type="kitti_show_c" name="kitti_show_c" output="screen">
+
+        <param name="bin_dir" type="string" value="$(arg bin_dir)" />
+        <param name="pcd_dir" type="string" value="$(arg pcd_dir)" />
+        <param name="input_type_option" type="string" value="$(arg input_type_option)"/>
+        <param name="show_type_option" type="string" value="$(arg show_type_option)" />
+        <param name="show_count" type="int" value="$(arg show_count)" />
+        <param name="show_num_" type="string" value="$(arg show_num)" />
+        <param name="cloud_type" type="string" value="$(arg cloud_type)" />
+
+    </node>
+
+
+    <node pkg="bag" type="kitti_show_p.py" name="kitti_show_p" output="screen">
+
+        <param name="calib_dir" type="string" value="$(arg calib_dir)" />    
+        <param name="label_dir" type="string" value="$(arg label_dir)" />
+        <param name="show_count" type="int" value="$(arg show_count)" />
+        <param name="show_num" type="int" value="$(arg show_num)" />
+
+    </node>
+
+</launch>

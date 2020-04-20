@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tof_detection</name>
+  <version>0.0.0</version>
+  <description>The tof_detection package</description>
+  <license>Apache License 2.0</license>
+  <author email="pyo@robotis.com">Yoonseok Pyo</author>
+  <maintainer email="cyber-z@todo.todo">cyber-z</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/ros_tutorials/issues</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/ros_tutorials.git</url>
+  <url type="website">http://www.robotis.com</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <!--<build_depend>message_generation</build_depend>-->
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>libpcl-all-dev</build_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <!--<exec_depend>message_exectime</exec_depend>-->
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>libpcl-all</exec_depend>
+  <export></export>
+</package>
